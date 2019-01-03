@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerCoreCommonTest", "Gin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerCoreNET", "GingerCoreNET\GingerCoreNET.csproj", "{0C33C26A-5F96-4060-BB1B-583BE9EE8478}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerCoreNETUnitTest", "GingerCoreNETUnitTest\GingerCoreNETUnitTest.csproj", "{5B0A04AB-BC20-45D3-9F27-2A4426528137}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerCoreNETTest", "GingerCoreNETUnitTest\GingerCoreNETTest.csproj", "{5B0A04AB-BC20-45D3-9F27-2A4426528137}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerAutoPilot", "GingerAutoPilot\GingerAutoPilot.csproj", "{65E1AF02-5CA7-444C-9255-7FDE55587D2A}"
 EndProject
