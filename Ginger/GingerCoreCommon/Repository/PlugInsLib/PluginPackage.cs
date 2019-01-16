@@ -163,7 +163,8 @@ namespace Amdocs.Ginger.Repository
         {
             get
             {
-                string userFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                string userFolder = GingerUtils.UserSystemInfo.GetUserProfileDirectory();
+                Console.WriteLine("==> UserFolder:" + userFolder);
                 userFolder = Path.Combine(userFolder, "Ginger", "PluginPackages");
                 return userFolder;
             }
