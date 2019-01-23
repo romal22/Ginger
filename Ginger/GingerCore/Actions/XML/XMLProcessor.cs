@@ -38,7 +38,6 @@ namespace GingerCore.Actions.XML
         // Read the XML for each elem generate output with Path
         private void SetOutput(XmlDocument xmlDoc, Act act)
         {
-            XmlReader rdr1 = XmlReader.Create(new System.IO.StringReader(xmlDoc.InnerXml));
             XmlReader rdr = XmlReader.Create(new System.IO.StringReader(xmlDoc.InnerXml));
             XmlReader subrdr = null;
             string Elm = "";
