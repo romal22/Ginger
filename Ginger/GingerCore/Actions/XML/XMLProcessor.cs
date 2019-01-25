@@ -38,53 +38,52 @@ namespace GingerCore.Actions.XML
         // Read the XML for each elem generate output with Path
         private void SetOutput(XmlDocument xmlDoc, Act act)
         {
-            XmlReader rdr = XmlReader.Create(new System.IO.StringReader(xmlDoc.InnerXml));
-            XmlReader subrdr = null;
-            string Elm = "";
+            XmlReader xmlReader = XmlReader.Create(new System.IO.StringReader(xmlDoc.InnerXml));
+            XmlReader subTreeXmlReader = null;
+            string xmlElement = "";
             
-            ArrayList ls = new ArrayList();
+            ArrayList xmlElementArrayList = new ArrayList();
             List<string> DeParams = new List<string>();
-            foreach (ActReturnValue r in act.ReturnValues)
+            foreach (ActReturnValue returnValue in act.ReturnValues)
             {
                 //TODO: How the user will know? add check box?
-                if (r.Param.IndexOf("AllDescOf") == 0)
-                    DeParams.Add(r.Param.Trim().Substring(9).Trim());
+                if (returnValue.Param.IndexOf("AllDescOf") == 0)
+                    DeParams.Add(returnValue.Param.Trim().Substring(9).Trim());
             }
 
-            while (rdr.Read())
+            while (xmlReader.Read())
             {
-                if (rdr.NodeType == XmlNodeType.Element)
+                if (xmlReader.NodeType == XmlNodeType.Element)
                 {
-                    Elm = rdr.Name;
-                    if (ls.Count <= rdr.Depth)
-                        ls.Add(Elm);
+                    xmlElement = xmlReader.Name;
+                    if (xmlElementArrayList.Count <= xmlReader.Depth)
+                        xmlElementArrayList.Add(xmlElement);
                     else
-                        ls[rdr.Depth] = Elm;
+                        xmlElementArrayList[xmlReader.Depth] = xmlElement;
                     foreach (var p in DeParams)
                     {
-                        if (p == rdr.Name)
+                        if (p == xmlReader.Name)
                         {
-                            subrdr = rdr.ReadSubtree();
-                            subrdr.ReadToFollowing(p);
-                            act.AddOrUpdateReturnParamActualWithPath("AllDescOf" + p, subrdr.ReadInnerXml(), "/" + string.Join("/", ls.ToArray().Take(rdr.Depth)));
-                            subrdr = null;
+                            subTreeXmlReader = xmlReader.ReadSubtree();
+                            subTreeXmlReader.ReadToFollowing(p);
+                            act.AddOrUpdateReturnParamActualWithPath("AllDescOf" + p, subTreeXmlReader.ReadInnerXml(), "/" + string.Join("/", xmlElementArrayList.ToArray().Take(xmlReader.Depth)));
+                            subTreeXmlReader = null;
                         }
                     }
                 }
 
-                if (rdr.NodeType == XmlNodeType.Text)
+                if (xmlReader.NodeType == XmlNodeType.Text)
                 {
                     // soup req contains sub xml, so parse them 
-                    if (rdr.Value.StartsWith("<?xml"))
+                    if (xmlReader.Value.StartsWith("<?xml"))
                     {
-                        XmlDocument xmlnDoc = new XmlDocument();
-                        xmlnDoc.LoadXml(rdr.Value);
-                        SetOutput(xmlnDoc, act);
+                        XmlDocument xmlDocument = new XmlDocument();
+                        xmlDocument.LoadXml(xmlReader.Value);
+                        SetOutput(xmlDocument, act);
                     }
                     else
                     {
-
-                        act.AddOrUpdateReturnParamActualWithPath(Elm, rdr.Value, "/" + string.Join("/", ls.ToArray().Take(rdr.Depth)));
+                        act.AddOrUpdateReturnParamActualWithPath(xmlElement, xmlReader.Value, "/" + string.Join("/", xmlElementArrayList.ToArray().Take(xmlReader.Depth)));
                     }
                 }
             }

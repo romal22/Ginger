@@ -123,8 +123,15 @@ namespace GingerCore.Actions.XML
                 throw new Exception("Processed File name can't be empty.");
             }
             string xml = System.IO.File.ReadAllText(fileName);
-            XMLProcessor xmlProcessor = new XMLProcessor();
-            xmlProcessor.ParseToReturnValues(xml, this);
+            if (!string.IsNullOrEmpty(xml))
+            {
+                XMLProcessor xmlProcessor = new XMLProcessor();
+                xmlProcessor.ParseToReturnValues(xml, this);
+            }
+            else
+            {
+                Reporter.ToLog(eLogLevel.ERROR, "Error: Processed file is empty.");
+            }
         }
 
         private void WaitForProcessedFile()
