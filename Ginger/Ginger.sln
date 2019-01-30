@@ -25,13 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GingerCore", "GingerCore\Gi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GingerPlugIns", "GingerPlugIns\GingerPlugIns.csproj", "{D5329D81-7FF0-4AF1-B186-A2FD65EF0583}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8E8355DE-609F-466A-88C3-9FB1E4C1EE78}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GingerATS", "GingerATS\GingerATS.csproj", "{C855FDED-E6F3-489E-92C5-7CFA7A6D49C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ginger", "Ginger\Ginger.csproj", "{3EFCB931-48FC-45BF-9598-0F8138802411}"
@@ -63,7 +56,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCore", "GingerP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCoreTest", "GingerPluginCoreTest\GingerPluginCoreTest.csproj", "{C34935B2-C955-4B35-B826-27F4AF5A9A82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GingerWeb", "GingerWeb\GingerWeb.csproj", "{4901E31F-61AE-48C2-92CF-18B15FE2C2FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerWeb", "GingerWeb\GingerWeb.csproj", "{4901E31F-61AE-48C2-92CF-18B15FE2C2FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
