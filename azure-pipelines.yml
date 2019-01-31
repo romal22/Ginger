@@ -32,6 +32,16 @@ jobs:
   
   - task: VSBuild@1
     inputs:
+      solution: 'D:\a\1\s\Ginger\Ginger\Ginger.sln'          
+      platform: 'x86'
+      clean: true
+    #  restoreNugetPackages: true
+      msbuildArchitecture: 'x86' # Optional. Options: x86, x64
+    displayName: Build Ginger
+
+
+  - task: VSBuild@1
+    inputs:
       solution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'          
       platform: 'x86'
       clean: true
