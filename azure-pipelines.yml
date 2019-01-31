@@ -32,7 +32,7 @@ jobs:
   
   - task: VSBuild@1
     inputs:
-      solution: 'D:\a\1\s\Ginger\Ginger\Ginger.sln'          
+      solution: 'D:\a\1\s\Ginger\Ginger.sln'          
       platform: 'x86'
       clean: true
       configuration: '$(buildConfiguration)'
