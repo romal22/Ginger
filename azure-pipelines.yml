@@ -46,7 +46,8 @@ jobs:
   #  displayName: Yaron Build 
   - task: VSBuild@1
     inputs:
-      solution: '$(solution)'
+      # solution: '$(solution)'
+      solution: 'D:\a\1\s\Ginger\Ginger\Ginger.csproj'          
       platform: 'Any CPU'
       clean: true
       restoreNugetPackages: true      
