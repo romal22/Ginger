@@ -37,6 +37,7 @@ jobs:
       clean: true
       configuration: '$(buildConfiguration)'
       restoreNugetPackages: true
+      msbuildArgs: /NoLogo
       # msbuildArchitecture: 'x86' # Optional. Options: x86, x64
     displayName: Build Ginger
 
