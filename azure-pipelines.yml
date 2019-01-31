@@ -35,7 +35,7 @@ jobs:
       solution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'          
       platform: 'x86'
       clean: true
-      restoreNugetPackages: true
+    #  restoreNugetPackages: true
       msbuildArchitecture: 'x86' # Optional. Options: x86, x64
     displayName: Build GingerPluginCoreTest Project
 
