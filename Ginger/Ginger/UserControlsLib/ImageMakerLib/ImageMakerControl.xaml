@@ -10,7 +10,7 @@
         <Grid >
             
 
-            <fa:FontAwesome x:Name="xFAFont" Visibility="Collapsed" Icon="Warning" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            
 
             <Image x:Name="xStaticImage" Visibility="Collapsed"></Image>
 
