@@ -35,6 +35,7 @@ jobs:
       solution: 'D:\a\1\s\Ginger\Ginger\Ginger.sln'          
       platform: 'x86'
       clean: true
+      configuration: '$(buildConfiguration)'
     #  restoreNugetPackages: true
       msbuildArchitecture: 'x86' # Optional. Options: x86, x64
     displayName: Build Ginger
@@ -47,6 +48,7 @@ jobs:
       clean: true
     #  restoreNugetPackages: true
       msbuildArchitecture: 'x86' # Optional. Options: x86, x64
+      configuration: '$(buildConfiguration)'
     displayName: Build GingerPluginCoreTest Project
 
 
