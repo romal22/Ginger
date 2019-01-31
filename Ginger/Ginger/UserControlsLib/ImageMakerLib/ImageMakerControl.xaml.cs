@@ -80,7 +80,7 @@ namespace Amdocs.Ginger.UserControls
         {
             if (!string.IsNullOrEmpty(ImageToolTip))
             {
-                xFAImage.ToolTip = ImageToolTip;
+                // xFAImage.ToolTip = ImageToolTip;
                 xFAFont.ToolTip = ImageToolTip;
             }
         }
@@ -684,8 +684,8 @@ namespace Amdocs.Ginger.UserControls
         private void ResetImageView()
         {
             // Reset All do defaults
-            xFAImage.Visibility = Visibility.Collapsed;
-            xFAImage.Spin = false;
+            // xFAImage.Visibility = Visibility.Collapsed;
+            // xFAImage.Spin = false;
             xFAFont.Visibility = Visibility.Collapsed;
             xFAFont.Spin = false;
             xStaticImage.Visibility = Visibility.Collapsed;
@@ -697,7 +697,7 @@ namespace Amdocs.Ginger.UserControls
         {
             //set the icon
             xFAFont.Icon = fontAwesomeIcon;
-            xFAImage.Icon = fontAwesomeIcon;
+            //xFAImage.Icon = fontAwesomeIcon;
             if (SetAsFontImageWithSize > 0)
             {                
                 xFAFont.Visibility = Visibility.Visible;
@@ -705,7 +705,7 @@ namespace Amdocs.Ginger.UserControls
             }
             else
             {                
-                xFAImage.Visibility = Visibility.Visible;
+                //xFAImage.Visibility = Visibility.Visible;
             }
 
             //set Foreground
@@ -715,21 +715,21 @@ namespace Amdocs.Ginger.UserControls
             }
             else if(foreground == null)
                 foreground = (SolidColorBrush)FindResource("$BackgroundColor_DarkBlue");           
-            xFAImage.Foreground = foreground;
+            //xFAImage.Foreground = foreground;
             if (this.ImageForeground != null)
                 xFAFont.Foreground = foreground;                       
 
             if (spinDuration != 0)
             {
-                xFAImage.Spin = true;
-                xFAImage.SpinDuration = spinDuration;
+               // xFAImage.Spin = true;
+               // xFAImage.SpinDuration = spinDuration;
                 xFAFont.Spin = true;
                 xFAFont.SpinDuration = spinDuration;
             }
 
             if(!string.IsNullOrEmpty(toolTip) && string.IsNullOrEmpty(ImageToolTip))
             {
-                xFAImage.ToolTip = toolTip;                
+               // xFAImage.ToolTip = toolTip;                
                 xFAFont.ToolTip = toolTip;
             }
             
@@ -756,18 +756,18 @@ namespace Amdocs.Ginger.UserControls
             IM.SetBorder = SetBorder;
             if (foreground != null || spinDuration > 0 || toolTip != null)//default design change is required
             {
-                IM.SetAsFontAwesomeIcon(IM.xFAImage.Icon, foreground, spinDuration, toolTip);
+               // IM.SetAsFontAwesomeIcon(IM.xFAImage.Icon, foreground, spinDuration, toolTip);
             }
             IM.Width = width;            
 
-            if (IM.xFAImage.Visibility == Visibility.Visible)
-            {
-                return IM.xFAImage.Source;
-            }                
-            else if (IM.xStaticImage.Visibility == Visibility.Visible)
-            {
-                return IM.xStaticImage.Source;
-            }
+            //if (IM.xFAImage.Visibility == Visibility.Visible)
+            //{
+            //    return IM.xFAImage.Source;
+            //}                
+            //else if (IM.xStaticImage.Visibility == Visibility.Visible)
+            //{
+            //    return IM.xStaticImage.Source;
+            //}
             return null;
         }
 
@@ -800,7 +800,7 @@ namespace Amdocs.Ginger.UserControls
         internal void StopImageSpin()
         {
             //Used for visual compare, we stop the spinner so image compare will be able to compare
-            xFAImage.Spin = false;
+            //xFAImage.Spin = false;
             xFAFont.Spin = false;
         }
     }

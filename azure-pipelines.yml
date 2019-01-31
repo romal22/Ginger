@@ -30,15 +30,15 @@ jobs:
       # configuration: '$(BuildConfiguration)'
     displayName: Restore Ginger Solution Nuget Packages
   
-  - task: VSBuild@1
-    inputs:
-      solution: 'D:\a\1\s\Ginger\GingerUtilsTest\GingerUtilsTest.csproj'          
-      # platform: 'x86'
-      # clean: true
-    #  restoreNugetPackages: true
-      # msbuildArchitecture: 'x86' # Optional. Options: x86, x64
-      # configuration: '$(buildConfiguration)'
-    displayName: Build GingerUtilsTest Project
+  #- task: VSBuild@1
+  #  inputs:
+  #    solution: 'D:\a\1\s\Ginger\GingerUtilsTest\GingerUtilsTest.csproj'          
+  #    # platform: 'x86'
+  #    # clean: true
+  #  #  restoreNugetPackages: true
+  #    # msbuildArchitecture: 'x86' # Optional. Options: x86, x64
+  #    # configuration: '$(buildConfiguration)'
+  #  displayName: Build GingerUtilsTest Project
 
   - task: VSBuild@1
     inputs:
@@ -54,15 +54,15 @@ jobs:
     displayName: Build Ginger
 
 
-  - task: VSBuild@1
-    inputs:
-      solution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'          
-      platform: 'x86'
-      clean: true
-    #  restoreNugetPackages: true
-      msbuildArchitecture: 'x86' # Optional. Options: x86, x64
-      configuration: '$(buildConfiguration)'
-    displayName: Build GingerPluginCoreTest Project
+  # - task: VSBuild@1
+  #  inputs:
+  #    solution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'          
+  #    platform: 'x86'
+  #    clean: true
+  #  #  restoreNugetPackages: true
+  #    msbuildArchitecture: 'x86' # Optional. Options: x86, x64
+  #    configuration: '$(buildConfiguration)'
+  #  displayName: Build GingerPluginCoreTest Project
 
 
   # - script: @"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\msbuild.exe" '$(solution)'
