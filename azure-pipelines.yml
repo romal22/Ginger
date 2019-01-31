@@ -44,13 +44,13 @@ jobs:
   # - script: MSBuild.exe "D:\a\1\s\Ginger\Ginger.sln"
   #  workingDirectory: C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\
   #  displayName: Yaron Build 
-  - task: VSBuild@1
-    inputs:
-      solution: 'D:\a\1\s\Ginger\Ginger.sln'          
+  # - task: VSBuild@1
+   # inputs:
+   #   solution: 'D:\a\1\s\Ginger\Ginger.sln'          
       # solution: '$(solution)'
       # solution: 'D:\a\1\s\Ginger\Ginger\Ginger.csproj'                
       # platform: 'Any CPU'
-    displayName: Build Ginger Solution
+   # displayName: Build Ginger Solution
   
   # platform: '$(buildPlatform)'
   #    configuration: '$(buildConfiguration)'
