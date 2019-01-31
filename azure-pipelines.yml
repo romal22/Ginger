@@ -51,6 +51,7 @@ jobs:
       platform: 'Any CPU'
       clean: true
       restoreNugetPackages: true      
+      outputPath : 'D:\a\1\s\Ginger\Ginger\bin\Release'
     displayName: Build Ginger Solution
   
   # platform: '$(buildPlatform)'
