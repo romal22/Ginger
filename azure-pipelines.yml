@@ -22,13 +22,13 @@ jobs:
   - task: NuGetToolInstaller@0  
     displayName: Run NuGet Tool Installer
 
-  - task: NuGetCommand@2
-    inputs:
-      command: restore  
-    #  restoreSolution: '$(solution)'  
-      restoreSolution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'  
-      configuration: '$(BuildConfiguration)'
-    displayName: Restore Ginger Solution Nuget Packages
+  # - task: NuGetCommand@2
+  #  inputs:
+  #    command: restore  
+  #  #  restoreSolution: '$(solution)'  
+  #    restoreSolution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'  
+  #    configuration: '$(BuildConfiguration)'
+  #  displayName: Restore Ginger Solution Nuget Packages
   
   - task: VSBuild@1
     inputs:
