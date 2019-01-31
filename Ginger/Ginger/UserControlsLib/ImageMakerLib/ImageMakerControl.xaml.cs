@@ -16,15 +16,14 @@ limitations under the License.
 */
 #endregion
 
-using Amdocs.Ginger.Core;
+using Amdocs.Ginger.Common.Enums;
+using FontAwesome.WPF;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using FontAwesome.WPF;
-using Amdocs.Ginger.Common.Enums;
 
 namespace Amdocs.Ginger.UserControls
 {

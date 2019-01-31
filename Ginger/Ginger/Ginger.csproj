@@ -110,9 +110,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\FlaUI.UIA3.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.WPF">
-      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
-    </Reference>
     <Reference Include="Interop.TDAPIOLELib">
       <HintPath>..\GingerCore\DLLs\Interop.TDAPIOLELib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -4357,6 +4354,9 @@
     </PackageReference>
     <PackageReference Include="DocumentFormat.OpenXml">
       <Version>2.8.1</Version>
+    </PackageReference>
+    <PackageReference Include="FontAwesome.WPF">
+      <Version>4.7.0.9</Version>
     </PackageReference>
     <PackageReference Include="Gherkin">
       <Version>4.0.0</Version>
