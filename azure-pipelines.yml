@@ -47,11 +47,11 @@ jobs:
   - task: VSBuild@1
     inputs:
       # solution: '$(solution)'
-      solution: 'D:\a\1\s\Ginger\Ginger\Ginger.csproj'          
+      # solution: 'D:\a\1\s\Ginger\Ginger\Ginger.csproj'          
+      solution:'D:\a\1\s\Ginger\Ginger.sln'          
       platform: 'Any CPU'
       clean: true
-      restoreNugetPackages: true      
-      outputPath : 'D:\a\1\s\Ginger\Ginger\bin\Release'
+      restoreNugetPackages: true                    
     displayName: Build Ginger Solution
   
   # platform: '$(buildPlatform)'
