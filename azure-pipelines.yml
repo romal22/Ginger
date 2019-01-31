@@ -47,6 +47,10 @@ jobs:
   - task: VSBuild@1
     inputs:
       solution: '$(solution)'
+      platform: 'x86'
+      clean: true
+      restoreNugetPackages: true
+      msbuildArchitecture: 'x86' # Optional. Options: x86, x64
     displayName: Build Ginger Solution
   
   # platform: '$(buildPlatform)'
