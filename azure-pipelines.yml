@@ -46,10 +46,10 @@ jobs:
   #  displayName: Yaron Build 
   - task: VSBuild@1
     inputs:
-      solution:'D:\a\1\s\Ginger\Ginger.sln'          
+      solution: 'D:\a\1\s\Ginger\Ginger.sln'          
       # solution: '$(solution)'
       # solution: 'D:\a\1\s\Ginger\Ginger\Ginger.csproj'                
-      platform: 'Any CPU'
+      # platform: 'Any CPU'
     displayName: Build Ginger Solution
   
   # platform: '$(buildPlatform)'
