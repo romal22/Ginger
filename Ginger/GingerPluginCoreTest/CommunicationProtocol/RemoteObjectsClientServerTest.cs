@@ -36,7 +36,7 @@ namespace GingerCoreNETUnitTest.Drivers.CommunicationProtocol
         }
 
 
-
+        [Ignore]
         [TestMethod]  [Timeout(60000)]
         public void RemoteObjectProxyTest1()
         {
