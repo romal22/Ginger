@@ -16,7 +16,7 @@ jobs:
     solutionDirectory:  'Ginger-Automation/Ginger'
     testDLLs: |
      **\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll
-     **\GingerCoreNetTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreNetTest.dll
+     **\GingerCoreNETUnitTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreNETUnitTest.dll
 
 # ------------------------------------------------------------------------------------------------------
 # Steps task
