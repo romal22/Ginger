@@ -54,6 +54,12 @@ jobs:
     displayName: Build Ginger
 
 
+  - task: VSTest@2
+    inputs:
+      testSelector: 'testAssemblies' 
+      testAssemblyVer2: '**\*test*.dll!**\*TestAdapter.dll!**\obj\**'
+      
+
   # - task: VSBuild@1
   #  inputs:
   #    solution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'          
