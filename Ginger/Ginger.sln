@@ -52,6 +52,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCoreTest", "Gin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "Unit Tests\UnitTests.csproj", "{E6B691DD-31F2-41BA-ADA5-EA0FE8B3D923}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GingerTest", "GingerTest\GingerTest.csproj", "{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +187,12 @@ Global
 		{E6B691DD-31F2-41BA-ADA5-EA0FE8B3D923}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6B691DD-31F2-41BA-ADA5-EA0FE8B3D923}.RemoteDebug|Any CPU.ActiveCfg = RemoteDebug|Any CPU
 		{E6B691DD-31F2-41BA-ADA5-EA0FE8B3D923}.RemoteDebug|Any CPU.Build.0 = RemoteDebug|Any CPU
+		{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}.RemoteDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4CEF07F-5257-49A0-A056-7D52CC5CD5FA}.RemoteDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
