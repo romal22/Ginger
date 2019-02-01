@@ -95,16 +95,15 @@ jobs:
 # Run Unit Test Level 1 for .NET Core testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
-  - task: VSTest@2
-    displayName: 'Run Unit tests Level for test DLLs'
-    inputs:      
-      testAssemblyVer2: $(testDLLs)
-      runInParallel: True
+  # - task: VSTest@2
+  #  displayName: 'Run Unit tests Level for test DLLs'
+  #  inputs:      
+  #    testAssemblyVer2: $(testDLLs)
+  #    runInParallel: True
+
+
+
       # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
-
-
-
-
       # testSelection: 'testAssembly'     
       # sourcefilters: '**\Ginger*Test.dll' # Required when testSelection == TestAssembly
       # vstestLocationMethod: 'location'
