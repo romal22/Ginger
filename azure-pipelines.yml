@@ -21,11 +21,11 @@ jobs:
     testDLLs: |
      **\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll
      **\GingerCoreNETUnitTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreNETUnitTest.dll
-     **\GingerUtilsTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerUtilsTest.dll
+     **\GingerConsoleTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerConsoleTest.dll
      
     artifactsFolder: 'D:\a\1\a' 
      
-
+     # **\GingerUtilsTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerUtilsTest.dll    <<<<< bad
      # **\GingerConsoleTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerConsoleTest.dll
      # **\GingerAutoPilotTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerAutoPilotTest.dll
      # **\GingerPluginCoreTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerPluginCoreTest.dll
@@ -93,7 +93,7 @@ jobs:
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit from all *Test.dll #1003'
+    displayName: 'Run Unit tests Level for test DLLs'
     inputs:      
       testAssemblyVer2: $(testDLLs)
       # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
