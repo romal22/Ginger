@@ -14,8 +14,14 @@ jobs:
     buildPlatform: 'Any CPU' 
     buildConfiguration: 'Release'
     solutionDirectory:  'Ginger-Automation/Ginger'
-  steps:
+    testDLLs: |
+     **\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll
+     **\GingerCoreNetTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreNetTest.dll
 
+# ------------------------------------------------------------------------------------------------------
+# Steps task
+# ------------------------------------------------------------------------------------------------------
+  steps:
 # ------------------------------------------------------------------------------------------------------
 # Install .Net core SDK 2.2
 # ------------------------------------------------------------------------------------------------------
@@ -70,13 +76,18 @@ jobs:
     displayName: Build Ginger
 
 # ------------------------------------------------------------------------------------------------------
-# Run Unit Test Level1 for: GingerUtilsTest, GingerCoreCommonTest, GingerCoreNETTest
+# Run Unit Test Level1 for testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit from all *Test.dll #1002'
+    displayName: 'Run Unit from all *Test.dll #1003'
     inputs:      
-      testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+      testAssemblyVer2: $(testDLLs)
+      # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+
+
+
+
       # testSelection: 'testAssembly'     
       # sourcefilters: '**\Ginger*Test.dll' # Required when testSelection == TestAssembly
       # vstestLocationMethod: 'location'
@@ -145,11 +156,11 @@ jobs:
 
 
   
-  - task: PublishTestResults@2
-    condition: succeededOrFailed()
-    inputs:
-      testRunner: VSTest
-      testResultsFiles: '**/*.trx'
+ # - task: PublishTestResults@2
+ #   condition: succeededOrFailed()
+ #   inputs:
+ #     testRunner: VSTest
+ #     testResultsFiles: '**/*.trx'
 
   - task: PublishBuildArtifacts@1
 
