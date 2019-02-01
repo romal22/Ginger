@@ -77,12 +77,14 @@ jobs:
       # platform: 'Any CPU'
    # displayName: Build Ginger Solution
   
+    - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
+      displayName: GingerCoreCommonTest Unit Tests
   # platform: '$(buildPlatform)'
   #    configuration: '$(buildConfiguration)'
-  # - script: echo BEFORE Unit test
+  # 
   - script: dotnet test "D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll" /Logger:trx
     displayName: Test GingerCoreCommonTest Level 1
-  # - script: echo AFTER Unit test
+  # 
 
 
 
