@@ -95,7 +95,7 @@ jobs:
 # Run Unit Test Level 1 for .NET Core testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
-   - task: VSTest@2
+  - task: VSTest@2
     displayName: 'Run Unit tests Level for test DLLs'
     inputs:      
       testAssemblyVer2: $(testDLLs)
