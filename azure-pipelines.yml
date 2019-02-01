@@ -60,6 +60,13 @@ jobs:
       testAssemblyVer2: '**\*Test*.dll!**\*TestAdapter.dll!**\obj\**'
       
 
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: test
+      projects: '**/*Test/*.csproj'
+      arguments: '--configuration $(buildConfiguration)'
+      displayName: dotnet test tests123
+
   # - task: VSBuild@1
   #  inputs:
   #    solution: 'D:\a\1\s\Ginger\GingerCoreCommonTest\GingerCoreCommonTest.csproj'          
