@@ -46,7 +46,7 @@ jobs:
       # platform: 'x86'
       clean: true
       configuration: '$(buildConfiguration)'
-      restoreNugetPackages: true
+     # restoreNugetPackages: true
       msbuildArgs: /NoLogo /m
       # /TargetFrameworkVersion /TargetCompactFramework
       # msbuildArchitecture: 'x86' # Optional. Options: x86, x64
@@ -58,14 +58,14 @@ jobs:
     inputs:
       testSelector: 'testAssemblies' 
       testAssemblyVer2: '**\*Test*.dll!**\*TestAdapter.dll!**\obj\**'
-      
+    displayName: vstets all test*
 
   - task: DotNetCoreCLI@2
     inputs:
       command: test
       projects: '**/*Test/*.csproj'
       arguments: '--configuration $(buildConfiguration)'
-      displayName: dotnet test tests123
+    displayName: dotnet test tests123
 
   # - task: VSBuild@1
   #  inputs:
