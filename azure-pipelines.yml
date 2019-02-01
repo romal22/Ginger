@@ -75,7 +75,7 @@ jobs:
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit Tests 803'
+    displayName: 'Run Unit from all *Test.dll'
     inputs:      
       # testAssemblyVer2: 'D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
       testSelection: 'testAssembly'     
@@ -97,18 +97,18 @@ jobs:
 # ------------------------------------------------------------------------------------------------------
 
 
-  - task: VSTest@2
-    inputs:
-      testSelector: 'testAssemblies' 
-      testAssemblyVer2: '**\*Test*.dll!**\*TestAdapter.dll!**\obj\**'
-    displayName: vstets all test*
+  # - task: VSTest@2
+  #  inputs:
+  #    testSelector: 'testAssemblies' 
+  #    testAssemblyVer2: '**\*Test*.dll!**\*TestAdapter.dll!**\obj\**'
+  #  displayName: vstets all test*
 
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: test
-      projects: '**/*Test/*.csproj'
-      arguments: '--configuration $(buildConfiguration)'
-    displayName: dotnet test tests123
+  # - task: DotNetCoreCLI@2
+  #  inputs:
+  #    command: test
+  #    projects: '**/*Test/*.csproj'
+  #    arguments: '--configuration $(buildConfiguration)'
+  #  displayName: dotnet test tests123
 
   # - task: VSBuild@1
   #  inputs:
@@ -133,8 +133,8 @@ jobs:
       # platform: 'Any CPU'
    # displayName: Build Ginger Solution
   
-  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
-    displayName: GingerCoreCommonTest Unit Tests
+ # - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
+ #   displayName: GingerCoreCommonTest Unit Tests
 
    # platform: '$(buildPlatform)'
    #   configuration: '$(buildConfiguration)'
@@ -145,7 +145,7 @@ jobs:
 
 
 
-
+  
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
