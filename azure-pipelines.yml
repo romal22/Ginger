@@ -75,11 +75,11 @@ jobs:
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit Tests 802'
+    displayName: 'Run Unit Tests 803'
     inputs:      
       # testAssemblyVer2: 'D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
       testSelection: 'testAssembly'     
-      sourcefilters: '**\*test*.dll' # Required when testSelection == TestAssembly
+      sourcefilters: '**\*Test.dll' # Required when testSelection == TestAssembly
       # vstestLocationMethod: 'location'
       # vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
       # codeCoverageEnabled: True
