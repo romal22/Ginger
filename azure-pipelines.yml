@@ -2,6 +2,9 @@
 
 jobs:
 
+# ------------------------------------------------------------------------------------------------------
+# Request Windows VM Windows 2016 with Visual Studio 2017 - set Ginger solution
+# ------------------------------------------------------------------------------------------------------
 
 - job: Windows
   pool:
@@ -13,15 +16,24 @@ jobs:
     solutionDirectory:  'Ginger-Automation/Ginger'
   steps:
 
+# ------------------------------------------------------------------------------------------------------
+# Restore Install .Net core SDK 
+# ------------------------------------------------------------------------------------------------------
   - task: DotNetCoreInstaller@0
     inputs:
       packageType: 'sdk' # Options: runtime, sdk
       version: '2.2.100' 
       displayName: Install .Net Core 2.2
 
+# ------------------------------------------------------------------------------------------------------
+# Install Nuget tool
+# ------------------------------------------------------------------------------------------------------
   - task: NuGetToolInstaller@0  
     displayName: NuGet Tool Installer
 
+# ------------------------------------------------------------------------------------------------------
+# Restore Ginger solution NuGet packages
+# ------------------------------------------------------------------------------------------------------
   - task: NuGetCommand@2
     inputs:
       command: restore  
@@ -40,6 +52,11 @@ jobs:
   #    # configuration: '$(buildConfiguration)'
   #  displayName: Build GingerUtilsTest Project
 
+
+# ------------------------------------------------------------------------------------------------------
+# Build Ginger Solution
+# ------------------------------------------------------------------------------------------------------
+
   - task: VSBuild@1
     inputs:
       solution: 'D:\a\1\s\Ginger\Ginger.sln'          
@@ -53,19 +70,32 @@ jobs:
       # TreatWarningsAsErrors / NoWarn   -- do not aloow warnings
     displayName: Build Ginger
 
+# ------------------------------------------------------------------------------------------------------
+# Run Unit Test Level1 for: GingerUtilsTest, GingerCoreCommonTest, GingerCoreNETTest
+# ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit Tests 801'
-    inputs:
-      # testAssemblyVer2: 'D:\a\1\s\\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
-      testAssemblyVer2: 'D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
-      vstestLocationMethod: 'location'
+    displayName: 'Run Unit Tests 802'
+    inputs:      
+      # testAssemblyVer2: 'D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+      testSelection: 'testAssembly'     
+      sourcefilters: '**\*test*.dll' # Required when testSelection == TestAssembly
+      # vstestLocationMethod: 'location'
       # vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
-      codeCoverageEnabled: True
+      # codeCoverageEnabled: True
       # otherConsoleOptions: '/platform:x64 /Framework:.NETCoreApp,Version=v2.1 /logger:console;verbosity="normal" '
       # platform: '$(buildPlatform)'
       # configuration: '$(buildConfiguration)'
       #testFiltercriteria:
+
+# ------------------------------------------------------------------------------------------------------
+# Run Unit Test Level2 for: GingerUtilsTest, GingerCoreCommonTest, GingerCoreNETTest
+# ------------------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------------------------------
+# Run Unit Test Level3 for: GingerUtilsTest, GingerCoreCommonTest, GingerCoreNETTest
+# ------------------------------------------------------------------------------------------------------
+
 
   - task: VSTest@2
     inputs:
