@@ -10,14 +10,14 @@ jobs:
   pool:
    vmImage: 'vs2017-win2016'
   variables:
-    solution: '**/*.sln'
+    solution: '**/*.sln'     # = D:\a\1\s\Ginger\Ginger.sln
     buildPlatform: 'Any CPU' 
     buildConfiguration: 'Release'
     solutionDirectory:  'Ginger-Automation/Ginger'
   steps:
 
 # ------------------------------------------------------------------------------------------------------
-# Restore Install .Net core SDK 
+# Install .Net core SDK 2.2
 # ------------------------------------------------------------------------------------------------------
   - task: DotNetCoreInstaller@0
     inputs:
@@ -59,7 +59,7 @@ jobs:
 
   - task: VSBuild@1
     inputs:
-      solution: '$(solution)\Ginger\Ginger.sln'          
+      solution: '$(solution)'          # = D:\a\1\s\Ginger\Ginger.sln
       # platform: 'x86'   
       clean: true
       configuration: '$(buildConfiguration)'
@@ -76,7 +76,7 @@ jobs:
   - task: VSTest@2
     displayName: 'Run Unit from all *Test.dll #1002'
     inputs:      
-      testAssemblyVer2: '$(solution)\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+      testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
       # testSelection: 'testAssembly'     
       # sourcefilters: '**\Ginger*Test.dll' # Required when testSelection == TestAssembly
       # vstestLocationMethod: 'location'
