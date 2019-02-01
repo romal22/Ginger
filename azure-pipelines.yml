@@ -75,18 +75,18 @@ jobs:
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit from all *Test.dll #1001'
+    displayName: 'Run Unit from all *Test.dll #1002'
     inputs:      
-      # testAssemblyVer2: 'D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
-      testSelection: 'testAssembly'     
-      sourcefilters: '**\Ginger*Test.dll' # Required when testSelection == TestAssembly
+      testAssemblyVer2: 'D:\a\1\s\Ginger\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+      # testSelection: 'testAssembly'     
+      # sourcefilters: '**\Ginger*Test.dll' # Required when testSelection == TestAssembly
       # vstestLocationMethod: 'location'
       # vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
       # codeCoverageEnabled: True
       # otherConsoleOptions: '/platform:x64 /Framework:.NETCoreApp,Version=v2.1 /logger:console;verbosity="normal" '
       # platform: '$(buildPlatform)'
       # configuration: '$(buildConfiguration)'
-      #testFiltercriteria:
+      # testFiltercriteria:
 
 # ------------------------------------------------------------------------------------------------------
 # Run Unit Test Level2 for: GingerUtilsTest, GingerCoreCommonTest, GingerCoreNETTest
