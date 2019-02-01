@@ -125,9 +125,10 @@ jobs:
   - task: VSTest@2
     displayName: 'Run Unit tests Level for test Framework DLLs <<<<<<<<<<'
     inputs:      
-      testAssemblyVer2: '**\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll'
+      testAssemblyVer2: '**\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll!**\*Microsoft.VisualStudio.TestPlatform*'
       vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
-      logger: trx
+      
+      # logger: trx
       # platform: '$(BuildPlatform)'
       # configuration: '$(BuildConfiguration)'
       #runInParallel: False # Optional
