@@ -99,6 +99,7 @@ jobs:
     displayName: 'Run Unit tests Level for test DLLs'
     inputs:      
       testAssemblyVer2: $(testDLLs)
+      runInParallel: True
       # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
 
 
@@ -123,9 +124,11 @@ jobs:
     displayName: 'Run Unit tests Level for test Framework DLLs <<<<<<<<<<'
     inputs:      
       testAssemblyVer2: '**\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll'
+      #runInParallel: False # Optional
 
       # configuration: '$(buildConfiguration)'
       # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+
 
 
       # testSelection: 'testAssembly'     
@@ -137,6 +140,18 @@ jobs:
       # platform: '$(buildPlatform)'
       # configuration: '$(buildConfiguration)'
       # testFiltercriteria:
+      #runInParallel: False # Optional
+    #runTestsInIsolation: False # Optional
+    #codeCoverageEnabled: False # Optional
+    #otherConsoleOptions: # Optional
+    #distributionBatchType: 'basedOnTestCases' # Optional. Options: basedOnTestCases, basedOnExecutionTime, basedOnAssembly
+    #batchingBasedOnAgentsOption: 'autoBatchSize' # Optional. Options: autoBatchSize, customBatchSize
+    #customBatchSizeValue: '10' # Required when distributionBatchType == BasedOnTestCases && BatchingBasedOnAgentsOption == CustomBatchSize
+    #batchingBasedOnExecutionTimeOption: 'autoBatchSize' # Optional. Options: autoBatchSize, customTimeBatchSize
+    #customRunTimePerBatchValue: '60' # Required when distributionBatchType == BasedOnExecutionTime && BatchingBasedOnExecutionTimeOption == CustomTimeBatchSize
+    #dontDistribute: False # Optional
+    #testRunTitle: # Optional
+    #platform: # Optional
 
 # ------------------------------------------------------------------------------------------------------
 # Run Unit Test Level2 for: GingerUtilsTest, GingerCoreCommonTest, GingerCoreNETTest
