@@ -95,11 +95,11 @@ jobs:
 # Run Unit Test Level 1 for .NET Core testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
-  # - task: VSTest@2
-  #  displayName: 'Run Unit tests Level for test DLLs'
-  #  inputs:      
-  #    testAssemblyVer2: $(testDLLs)
-  #    runInParallel: True
+   - task: VSTest@2
+    displayName: 'Run Unit tests Level for test DLLs'
+    inputs:      
+      testAssemblyVer2: $(testDLLs)
+      runInParallel: True
 
 
 
@@ -120,7 +120,7 @@ jobs:
 # ------------------------------------------------------------------------------------------------------
     
   - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
-
+  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerTest\bin\Release\GingerTest.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
 
   # - task: VSTest@2
    # displayName: 'Run Unit tests Level for test Framework DLLs <<<<<<<<<<'
