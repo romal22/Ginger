@@ -122,11 +122,11 @@ jobs:
   - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
 
 
-  - task: VSTest@2
-    displayName: 'Run Unit tests Level for test Framework DLLs <<<<<<<<<<'
-    inputs:      
-      testAssemblyVer2: '**\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll'
-      Framework: Framework45
+  # - task: VSTest@2
+   # displayName: 'Run Unit tests Level for test Framework DLLs <<<<<<<<<<'
+   # inputs:      
+   #   testAssemblyVer2: '**\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll'
+      # Framework: Framework45
       # vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
       
       # logger: trx
@@ -217,11 +217,11 @@ jobs:
 
 
   
- # - task: PublishTestResults@2
- #   condition: succeededOrFailed()
- #   inputs:
- #     testRunner: VSTest
- #     testResultsFiles: '**/*.trx'
+  - task: PublishTestResults@2
+    condition: succeededOrFailed()
+    inputs:
+      testRunner: VSTest
+      testResultsFiles: '**/*.trx'
 
   - task: PublishBuildArtifacts@1
 
