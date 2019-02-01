@@ -92,13 +92,37 @@ jobs:
     displayName: Build Ginger
 
 # ------------------------------------------------------------------------------------------------------
-# Run Unit Test Level1 for testDLLs: 
+# Run Unit Test Level 1 for .NET Core testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
     displayName: 'Run Unit tests Level for test DLLs'
     inputs:      
       testAssemblyVer2: $(testDLLs)
+      # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
+
+
+
+
+      # testSelection: 'testAssembly'     
+      # sourcefilters: '**\Ginger*Test.dll' # Required when testSelection == TestAssembly
+      # vstestLocationMethod: 'location'
+      # vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
+      # codeCoverageEnabled: True
+      # otherConsoleOptions: '/platform:x64 /Framework:.NETCoreApp,Version=v2.1 /logger:console;verbosity="normal" '
+      # platform: '$(buildPlatform)'
+      # configuration: '$(buildConfiguration)'
+      # testFiltercriteria:
+
+
+# ------------------------------------------------------------------------------------------------------
+# Run Unit Test Level 1 for .NET Framework
+# ------------------------------------------------------------------------------------------------------
+    
+  - task: VSTest@2
+    displayName: 'Run Unit tests Level for test Framework DLLs <<<<<<<<<<'
+    inputs:      
+      testAssemblyVer2: '**\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll'
       # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
 
 
