@@ -100,7 +100,7 @@ jobs:
       testAssemblyVer2: $(testDLLs)
       runInParallel: True
       codeCoverageEnabled: True
-      dontDistribute : true    # We have a seperate publish result step so we don't double count      
+      dontDistribute : True    # We have a seperate publish result step so we don't double count      
       
 
 
