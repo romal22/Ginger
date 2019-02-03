@@ -100,13 +100,13 @@ jobs:
 # Run Unit Test Level 1 for .NET Core testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
-  #- task: VSTest@2
-  #  displayName: 'Run Unit tests Level for test DLLs'
-  #  inputs:      
-  #    testAssemblyVer2: $(testDLLs)
-  #    runInParallel: True
-  #    codeCoverageEnabled: True
-  #    dontDistribute : True    # We have a seperate publish result step so we don't double count      
+  - task: VSTest@2
+    displayName: 'Run Unit tests Level for test DLLs'
+    inputs:      
+      testAssemblyVer2: $(testDLLs)
+      runInParallel: True
+      codeCoverageEnabled: True
+      dontDistribute : True    # We have a seperate publish result step so we don't double count      
       
       
 
