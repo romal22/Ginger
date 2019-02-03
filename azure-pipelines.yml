@@ -88,7 +88,7 @@ jobs:
     inputs:
       solution: '$(solution)'          # = D:\a\1\s\Ginger\Ginger.sln
       # platform: 'x86'   
-      clean: true
+      # clean: true
       configuration: '$(buildConfiguration)'
       msbuildArgs: /NoLogo /m      
       # /TargetFrameworkVersion /TargetCompactFramework
