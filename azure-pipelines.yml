@@ -20,6 +20,7 @@ jobs:
     solutionDirectory:  'Ginger-Automation/Ginger'    
     testDLLs: |
      **\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll
+     !**\*Microsoft.VisualStudio.TestPlatform*
      
      
      
@@ -105,6 +106,7 @@ jobs:
       runInParallel: True
       codeCoverageEnabled: True
       dontDistribute : True    # We have a seperate publish result step so we don't double count      
+      
       
 
 
