@@ -230,10 +230,10 @@ jobs:
 
   
   - task: PublishTestResults@2
-     condition: succeededOrFailed()
-     inputs:
-       testRunner: VSTest
-       testResultsFiles: '**/*.trx'
+    condition: succeededOrFailed()
+    inputs:
+      testRunner: VSTest
+      testResultsFiles: '**/*.trx'
 
 
   - task: PublishBuildArtifacts@1
