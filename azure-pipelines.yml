@@ -19,7 +19,7 @@ jobs:
     buildConfiguration: 'Release'
     solutionDirectory:  'Ginger-Automation/Ginger'    
     testDLLs: |
-     **\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll   # cannot mix .Net Framework
+     **\Unit Tests\bin\$(buildConfiguration)\UnitTests.dll
      
      
      
@@ -125,8 +125,8 @@ jobs:
 # Run Unit Test Level 1 for .NET Framework
 # ------------------------------------------------------------------------------------------------------
     
-  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
-  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerTest\bin\Release\GingerTest.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
+  #- script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
+  #- script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerTest\bin\Release\GingerTest.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
 
   # add /Parallel
 
