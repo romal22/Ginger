@@ -19,19 +19,16 @@ jobs:
     buildConfiguration: 'Release'
     solutionDirectory:  'Ginger-Automation/Ginger'    
     testDLLs: |
-    
-      **\UnitTestProject1\bin\$(buildConfiguration)\UnitTestProject1.dll
-      
-     
+      **\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll
+      **\GingerCoreNETUnitTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreNETUnitTest.dll
+      **\GingerConsoleTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerConsoleTest.dll
+      **\GingerAutoPilotTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerAutoPilotTest.dll
+      **\GingerPluginCoreTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerPluginCoreTest.dll           
      
     artifactsFolder: 'D:\a\1\a' 
      
       
-      # **\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll
-      # **\GingerCoreNETUnitTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreNETUnitTest.dll
-      # **\GingerConsoleTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerConsoleTest.dll
-      # **\GingerAutoPilotTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerAutoPilotTest.dll
-      # **\GingerPluginCoreTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerPluginCoreTest.dll     
+      
 
      # **\GingerUtilsTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerUtilsTest.dll    <<<<< bad
      
@@ -94,23 +91,20 @@ jobs:
       # /TargetFrameworkVersion /TargetCompactFramework
       # msbuildArchitecture: 'x86' # Optional. Options: x86, x64
       # TreatWarningsAsErrors / NoWarn   -- do not aloow warnings
-    displayName: Build Ginger
+    displayName: Build Ginger solution
 
 # ------------------------------------------------------------------------------------------------------
 # Run Unit Test Level 1 for .NET Core testDLLs: 
 # ------------------------------------------------------------------------------------------------------
     
   - task: VSTest@2
-    displayName: 'Run Unit tests Level for test DLLs'
+    displayName: 'Run Unit tests Level for .Net Core test DLLs'
     inputs:      
       testAssemblyVer2: $(testDLLs)
       runInParallel: True
       codeCoverageEnabled: True
-      dontDistribute : True    # We have a seperate publish result step so we don't double count      
       
       
-
-
 
       # testAssemblyVer2: '**\GingerCoreCommonTest\bin\$(buildConfiguration)\netcoreapp2.1\GingerCoreCommonTest.dll'
       # testSelection: 'testAssembly'     
@@ -128,12 +122,12 @@ jobs:
 # Run Unit Test Level 1 for .NET Framework
 # ------------------------------------------------------------------------------------------------------
 
-  #- script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" 
-  #  displayName: UnitTest tests
-  #- script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerTest\bin\Release\GingerTest.dll" 
-  #  displayName: GingerTest tests
-  #- script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\UnitTestProject1\bin\Release\UnitTestProject1.dll" 
-  #  displayName: UnitTestProject1
+  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" 
+    displayName: UnitTest tests
+  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\GingerTest\bin\Release\GingerTest.dll" 
+    displayName: GingerTest tests
+  - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\UnitTestProject1\bin\Release\UnitTestProject1.dll" 
+    displayName: UnitTestProject1
 
     
   # - script: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe "D:\a\1\s\Ginger\Unit Tests\bin\Release\UnitTests.dll" /TestCaseFilter:TestCategory=Level1 /Logger:trx
